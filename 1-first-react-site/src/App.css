@@ -58,3 +58,8 @@ main {
   line-height: 19px;
   padding-block: 10px;
 }
+
+.main--facts > li::marker {
+  font-size: 1.4rem;
+  color: #61DAFB;
+}
