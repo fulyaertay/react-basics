@@ -6,11 +6,12 @@ Hint: use the Figma file for the most accurate peek at the design
 */
 
 import React from "react"
+import icon from "../images/react-icon-small.png"
 
 export default function Navbar() {
     return (
         <nav>
-            <img src="../images/react-icon-small.png" alt="react-icon" className="nav--icon" />
+            <img src={icon} alt="react-icon" className="nav--icon" />
             <h3 className="nav--logo_text">ReactFacts</h3>
             <h4 className="nav--title">React Course - Project 1</h4>
         </nav>
