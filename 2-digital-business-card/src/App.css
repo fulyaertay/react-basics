@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #23252C;
+  
+}
+.container{
+  border: 1px solid aliceblue;
+  width: 317px;
+  height: 500px;
+  margin: 80px auto;
+}
