@@ -5,6 +5,7 @@
 - [Projects](#projects)
 
   - [1-First React Site](#1-first-react-site)
+  - [2-Digital Business Card](#2-digital-business-card)
 
     
   ## Overview
@@ -23,6 +24,22 @@
   
   I created a first static webpage with react.
   
+  ### 2-Digital Business Card
+
+  ### Visualization of the app;
+  ![image](./2-digital-business-card/digital-business-card.png)
+  
+  ### Description
+  
+  I created a digital business card with three components.
+  - Header component consists of;
+    - An image,
+    - Name & job title
+    - Action buttons
+  - Main component consists of;
+    - About & interests contents
+  - Footer component consists of;
+    - Social media icons
   
   ### What I Learned?
   - Why React?
