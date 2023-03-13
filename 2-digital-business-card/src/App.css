@@ -20,8 +20,8 @@ a {
 }
 .container {
   border: 1px solid rgb(255, 255, 255);
-  width: 317px;
-  height: 500px;
+  width: 407px;
+  height: 800px;
   margin: 80px auto;
   border-radius: 10px;
 }
@@ -52,8 +52,9 @@ a {
 }
 .CTA {
   display: flex;
-  padding-left: 40px;
+  padding-left: 80px;
   gap: 10px;
+  margin-top: 20px;
 }
 .Email-submit,
 .Linkedin-submit {
@@ -69,4 +70,13 @@ a {
 .Linkedin-submit {
   background: #5093e2;
   color: aliceblue;
+}
+
+.main-content{
+  margin-top: 180px;
+  padding-left: 80px;
+}
+.about{
+  color: aliceblue;
+  font-weight: 400;
 }

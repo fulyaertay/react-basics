@@ -19,7 +19,7 @@ export default function Header() {
         </button>
         <button type="submit" className="Linkedin-submit">
           <i class="fa-brands fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/fulyaertay/">LinkedIn </a>
+          <a href="https://www.linkedin.com/in/fulyaertay/"> LinkedIn </a>
         </button>
       </div>
     </div>
