@@ -1,7 +1,7 @@
 ### Digital Business Card
 
   ### Visualization of the app;
-  ![image](./2-digital-business-card/digital-business-card.png)
+  ![image](./digital-business-card.png)
   
   ### Description
   
