@@ -1,3 +1,30 @@
+### Digital Business Card
+
+  ### Visualization of the app;
+  ![image](./2-digital-business-card/digital-business-card.png)
+  
+  ### Description
+  
+  I created a solo project called as digital business card with three components.
+  - Header component consists of;
+    - An image,
+    - Name & job title
+    - Action buttons
+  - Main component consists of;
+    - About & interests contents
+  - Footer component consists of;
+    - Social media icons
+  
+  ### What I Learned?
+  - Why React?
+  - JSX
+  - Custom Components
+  - Styling
+  - Static pages
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
