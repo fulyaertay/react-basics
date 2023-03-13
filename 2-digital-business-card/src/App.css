@@ -21,7 +21,7 @@ a {
 .container {
   border: 1px solid rgb(255, 255, 255);
   width: 407px;
-  height: 800px;
+  height: 850px;
   margin: 80px auto;
   border-radius: 10px;
 }
@@ -104,4 +104,13 @@ a {
   line-height: 150%;
   margin-top: 10px;
   color: #dcdcdc;
+}
+
+.footer{
+
+width: 100%;
+height: 64px;
+margin-top: 17px;
+background: #161619;
+border-radius: 0px 0px 10px 10px;
 }
