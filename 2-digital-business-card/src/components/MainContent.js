@@ -11,7 +11,7 @@ export default function MainContent() {
       </p>
       <h2 className="interests-title">Interests</h2>
       <p className="interests">
-        Food expert. Music scholar. Reader. Internet fanatic. Bacon buff.
+        Food expert. Knitting. Chess. Music scholar. Reader. Internet fanatic. Bacon buff.
         Entrepreneur. Travel geek. Pop culture ninja. Coffee fanatic.
       </p>
     </div>
