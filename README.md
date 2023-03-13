@@ -24,7 +24,7 @@
   
   I created a first static webpage with react.
   
-  ### 2-Digital Business Card
+  ### 2-Digital Business Card : [Live Link](https://fulyaertay-digital-business-card.netlify.app/)
 
   ### Visualization of the app;
   ![image](./2-digital-business-card/digital-business-card.png)
