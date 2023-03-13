@@ -17,8 +17,20 @@ body{
 .header{
   width:100%;
   height:400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
 }
 .avatar{
   width:100%;
   border-radius: 10px 10px 0 0;
+}
+.name{
+  color: aliceblue;
+}
+.job{
+  color: #F3BF99;
+
+
 }
