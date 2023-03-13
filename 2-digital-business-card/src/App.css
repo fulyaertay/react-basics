@@ -23,7 +23,7 @@ a{
   height:400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   gap:10px;
 }
 .avatar{
@@ -32,13 +32,36 @@ a{
 }
 .name{
   color: aliceblue;
+  text-align: center;
 }
 .job{
   color: #F3BF99;
+  text-align: center;
 
 
 }
 .website{
   color: aliceblue;
   font-size: 10px;
+  text-align: center;
+}
+.CTA{
+  display: flex;
+  padding-left: 40px;
+  gap:10px;
+
+}
+.Email-submit,.Linkedin-submit{
+  width: 115px;
+  height: 34px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.Email-submit{
+  background: #FFFFFF;
+}
+.Linkedin-submit{
+  background: #5093E2;
+  color: aliceblue;
 }

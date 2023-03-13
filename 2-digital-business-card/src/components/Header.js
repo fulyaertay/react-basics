@@ -1,5 +1,6 @@
 import React from "react";
 import avatar from "../images/avatar.png"
+
 export default function Header(){
     return(
         <div className="header">
@@ -7,7 +8,12 @@ export default function Header(){
             <h3 className="name">Fulya Ertay</h3>
             <p className="job">Frontend Developer</p>
             <p className="website"><a href="https://fulyaertay.netlify.app/">https://fulyaertay.netlify.app/</a></p>
-
+            <div className="CTA">
+                <button type="submit" className="Email-submit" > <i class="fa-solid fa-envelope"></i> Email
+               
+                </button>    
+                <button type="submit" className="Linkedin-submit"> <i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+            </div>
         </div>
     )
 }
