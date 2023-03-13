@@ -106,11 +106,14 @@ a {
   color: #dcdcdc;
 }
 
-.footer{
-
-width: 100%;
-height: 64px;
-margin-top: 17px;
-background: #161619;
-border-radius: 0px 0px 10px 10px;
+.footer {
+  width: 100%;
+  height: 64px;
+  margin-top: 17px;
+  background: #161619;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
