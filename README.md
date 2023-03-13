@@ -31,7 +31,7 @@
   
   ### Description
   
-  I created a digital business card with three components.
+  I created a solo project called as digital business card with three components.
   - Header component consists of;
     - An image,
     - Name & job title
