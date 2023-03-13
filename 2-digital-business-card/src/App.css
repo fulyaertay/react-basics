@@ -7,6 +7,10 @@ body{
   background: #23252C;
   
 }
+a{
+  text-decoration: none;
+  color: aliceblue;
+}
 .container{
   border: 1px solid rgb(255, 255, 255);
   width: 317px;
@@ -33,4 +37,8 @@ body{
   color: #F3BF99;
 
 
+}
+.website{
+  color: aliceblue;
+  font-size: 10px;
 }
