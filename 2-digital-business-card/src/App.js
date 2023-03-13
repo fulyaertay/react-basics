@@ -6,9 +6,8 @@ import MainContent from "./components/MainContent"
 function App() {
   return (
     <div className="container">
-      <Header />
-      <MainContent />
-      <Footer />
+      <Header></Header>
+     
 
     
     </div>
