@@ -57,7 +57,7 @@
   
   ### Description
   
-  I created an AirBnb experiences clone static app with three components.
+  I created static page for AirBnb experiences clone app with three components.
   - Navbar component consists of;
     - AirBnb logo,
     - Navbar
