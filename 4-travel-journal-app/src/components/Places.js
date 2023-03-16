@@ -11,10 +11,13 @@ export default function Places(props) {
           <p className="view--maps">View on Google Maps</p>
         </div>
         <div>
-        <h4 className="place--title">{props.item.title}</h4>
+          <h4 className="place--title">{props.item.title}</h4>
         </div>
         <div>
-        <p>{props.item.location}</p>
+          <h4 className="place--date">{props.item.date}</h4>
+        </div>
+        <div>
+          <h4 className="place--description">{props.item.description}</h4>
         </div>
       </div>
     </div>

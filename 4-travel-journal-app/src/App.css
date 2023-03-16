@@ -1,62 +1,77 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 55px;
-  background-color: #F55A5A;
-  gap:10px;
+  background-color: #f55a5a;
+  gap: 10px;
 }
-.nav-text{
+.nav-text {
   color: aliceblue;
   font-weight: 200;
 }
-.card--list{
+.card--list {
   display: flex;
   align-items: center;
-  max-width:1200px;
+  max-width: 1200px;
   margin: 60px auto;
   padding-bottom: 40px;
   border-bottom: 1px solid gray;
 }
-.travel--image{
+.travel--image {
   width: 125px;
   height: 168px;
-
 }
 
-.place--content{
+.place--content {
   display: flex;
   margin-left: 20px;
   flex-direction: column;
-
 }
-.places--content-header{
+.places--content-header {
   display: flex;
   align-items: center;
-text-align: left;
-  gap:10px;
+  text-align: left;
+  gap: 10px;
 }
 
-.location--logo{
-  width:10px;
+.location--logo {
+  width: 10px;
 }
-.view--maps{
-  color: #918E9B;
+.view--maps {
+  color: #918e9b;
   text-decoration: underline;
 }
-.place--title{
+.place--title {
   font-style: normal;
-font-weight: 700;
-font-size: 25px;
-line-height: 30px;
-margin:10px 0;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #2b283a;
+}
 
-color: #2B283A;
+.place--date {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 12px;
+  color: #2b283a;
+}
+
+.place--description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  margin-top: 10px;
+  color: #2b283a;
 }
