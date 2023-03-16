@@ -1,6 +1,7 @@
 import React from "react"
 import cardImage from "../images/katie-zaferes.png"
 import starIcon from "../images/star.png"
+
 /*
 Challenge: Build the Card component
 For now, hard-code in the data (like 
@@ -23,12 +24,12 @@ Notes:
 export default function Card(props) {
     return (
         <div className="card">
-            <img src={cardImage} className="card--image" />
+            <img src={props.img} className="card--image" />
             <div className="card--stats">
                 <img src={starIcon} className="card--star" />
                 <span>{props.rating}</span>
                 <span className="gray">({props.reviewCount}) • </span>
-                <span className="gray">{props.country}</span>
+                <span className="gray">{props.location}</span>
             </div>
             <p>{props.title}</p>
             <p><span className="bold">From ${props.price}</span> / person</p>
