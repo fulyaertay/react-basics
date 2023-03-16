@@ -51,3 +51,12 @@ text-align: left;
   color: #918E9B;
   text-decoration: underline;
 }
+.place--title{
+  font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+margin:10px 0;
+
+color: #2B283A;
+}
