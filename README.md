@@ -83,6 +83,7 @@
     - Place location when clicked "View on Google Maps"
     - Travel date
     - Place description
+  - Footer component
     
   ### What I Learned?
   - Props in React
