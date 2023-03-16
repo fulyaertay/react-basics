@@ -67,6 +67,22 @@
   - Card component consists of;
     - Card lists including user views
   
+  ### 4-Travel Journal App : [Live Link](https://travel-journal-static-site.netlify.app/)
+
+  ### Visualization of the app;
+  ![image](./4-travel-journal-app/travel-journal.png)
+  
+  ### Description
+  
+  I created a static solo project called as travel journal app with two components.
+  - Header component consists of;
+    - Navbar including logo and site name
+  - Places component consists of;
+    - Place image
+    - Place location when clicked "View on Google Maps"
+    - Travel date
+    - Place description
+    
   ### What I Learned?
   - Props in React
   - Mapping data
