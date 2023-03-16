@@ -6,6 +6,7 @@
 
   - [1-First React Site](#1-first-react-site)
   - [2-Digital Business Card](#2-digital-business-card)
+  - [3-AirBnb Clone App](#3-airbnb-clone-app)
 
     
   ## Overview
@@ -47,3 +48,25 @@
   - Custom Components
   - Styling
   - Static pages
+  
+  
+  ### 3-AirBnb Clone App
+
+  ### Visualization of the app;
+  ![image](./3-airbnb-clone-app/airbnb-clone.png)
+  
+  ### Description
+  
+  I created a airbnb experiences clone with three components.
+  - Navbar component consists of;
+    - AirBnb logo,
+    - Navbar
+  - Hero component consists of;
+    - Hero header & hero text
+  - Card component consists of;
+    - Card lists including user views
+  
+  ### What I Learned?
+  - Props in React
+  - Mapping data
+  - && operator as short way of if statement
