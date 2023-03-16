@@ -57,7 +57,7 @@
   
   ### Description
   
-  I created a airbnb experiences clone with three components.
+  I created a AirBnb experiences clone with three components.
   - Navbar component consists of;
     - AirBnb logo,
     - Navbar
