@@ -70,8 +70,11 @@
   
   ### 4-Travel Journal App : [Live Link](https://travel-journal-static-site.netlify.app/)
 
-  ### Visualization of the app;
+  ### Visualization on the Desktop;
   ![image](./4-travel-journal-app/travel-journal.png)
+  
+  ### Visualization on the Mobile;
+  ![image](./4-travel-journal-app/responsive-app.png)
   
   ### Description
   
