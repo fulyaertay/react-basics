@@ -62,6 +62,7 @@
     - AirBnb logo,
     - Navbar
   - Hero component consists of;
+    - Hero image
     - Hero header & hero text
   - Card component consists of;
     - Card lists including user views
