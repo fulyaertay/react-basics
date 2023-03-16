@@ -17,3 +17,20 @@
   color: aliceblue;
   font-weight: 200;
 }
+.card--list{
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 60px;
+  border-bottom: 1px solid gray;
+}
+.travel--image{
+  width: 125px;
+  height: 168px;
+}
+
+.place--content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
