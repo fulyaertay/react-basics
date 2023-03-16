@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -19,7 +19,7 @@ nav {
 }
 
 .gray {
-  color: #918E9B;
+  color: #918e9b;
 }
 
 .nav--logo {
@@ -61,11 +61,11 @@ section {
 .card {
   width: 175px;
   font-size: 12px;
-  flex: 0 0 auto;         /* ADD */
-  display: flex;          /* ADD */
+  flex: 0 0 auto; /* ADD */
+  display: flex; /* ADD */
   flex-direction: column; /* ADD */
   position: relative;
-  }
+}
 
 .card--image {
   width: 100%;
