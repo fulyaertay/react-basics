@@ -32,7 +32,7 @@
   
   ### Description
   
-  I created a solo project called as digital business card with three components.
+  I created a static solo project called as digital business card with three components.
   - Header component consists of;
     - An image,
     - Name & job title
@@ -57,7 +57,7 @@
   
   ### Description
   
-  I created an AirBnb experiences clone with three components.
+  I created an AirBnb experiences clone static app with three components.
   - Navbar component consists of;
     - AirBnb logo,
     - Navbar
