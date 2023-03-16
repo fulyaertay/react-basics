@@ -23,7 +23,7 @@
   max-width: 1200px;
   margin: 60px auto;
   padding-bottom: 40px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(223, 219, 219);
 }
 .travel--image {
   width: 125px;
