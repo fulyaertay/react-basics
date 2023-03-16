@@ -5,6 +5,8 @@ import Places from "./components/Places"
 function App() {
   return (
     <div className="App">
+      <Header/>
+ 
     
     </div>
   );
