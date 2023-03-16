@@ -8,7 +8,11 @@ export default function Places(props) {
         <div className="places--content-header">
           <img src="../images/location.png" className="location--logo"></img>
           <p>{props.item.location}</p>
-          <p ><a href={props.item.mapLink} target="_blank" className="view--maps">View on Google Maps</a></p>
+          <p>
+            <a href={props.item.mapLink} target="_blank" className="view--maps">
+              View on Google Maps
+            </a>
+          </p>
         </div>
         <div>
           <h4 className="place--title">{props.item.title}</h4>

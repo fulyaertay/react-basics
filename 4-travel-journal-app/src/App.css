@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -17,6 +17,7 @@
   color: aliceblue;
   font-weight: 200;
 }
+/* Places List */
 .card--list {
   display: flex;
   align-items: center;
