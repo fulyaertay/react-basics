@@ -13,7 +13,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "nodemon app",
     "watch": "webpack -w"
   }
 }
