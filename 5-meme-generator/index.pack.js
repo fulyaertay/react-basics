@@ -479,7 +479,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = Header;
 
@@ -490,28 +490,31 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header() {
-  return _react2.default.createElement(
-    "header",
-    { className: "header" },
-    _react2.default.createElement("img", { src: "./images/troll-face.png", className: "header--image" }),
-    _react2.default.createElement(
-      "h2",
-      { className: "header--title" },
-      "Meme Generator"
-    ),
-    _react2.default.createElement(
-      "h4",
-      { className: "header--project" },
-      "React Course - Project 3"
-    )
-  );
+    return _react2.default.createElement(
+        "header",
+        { className: "header" },
+        _react2.default.createElement("img", {
+            src: "./images/troll-face.png",
+            className: "header--image"
+        }),
+        _react2.default.createElement(
+            "h2",
+            { className: "header--title" },
+            "Meme Generator"
+        ),
+        _react2.default.createElement(
+            "h4",
+            { className: "header--project" },
+            "React Course - Project 3"
+        )
+    );
 }
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: SyntaxError: C:/Users/fulya/Desktop/Scrimba/react-basics/5-meme-generator/components/Meme.js: Unexpected token (36:20)\n\n\u001b[0m \u001b[90m 34 | \u001b[39m        \u001b[36mconst\u001b[39m url \u001b[33m=\u001b[39m memesArray[randomNumber]\u001b[33m.\u001b[39murl\n \u001b[90m 35 | \u001b[39m        setMeme(prevMeme \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 | \u001b[39m            \u001b[36mreturn\u001b[39m {\u001b[33m...\u001b[39mprevMeme\u001b[33m,\u001b[39m\n \u001b[90m    | \u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 | \u001b[39m                randomImage\u001b[33m:\u001b[39m url}\n \u001b[90m 38 | \u001b[39m        })\n \u001b[90m 39 | \u001b[39m        \u001b[0m\n");
+throw new Error("Module build failed: SyntaxError: C:/Users/fulya/Desktop/Scrimba/react-basics/5-meme-generator/components/Meme.js: Unexpected token (36:12)\n\n\u001b[0m \u001b[90m 34 | \u001b[39m        \u001b[36mconst\u001b[39m url \u001b[33m=\u001b[39m memesArray[randomNumber]\u001b[33m.\u001b[39murl\n \u001b[90m 35 | \u001b[39m        setMeme(prevMeme \u001b[33m=>\u001b[39m ({\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 | \u001b[39m            \u001b[33m...\u001b[39mprevMeme\u001b[33m,\u001b[39m\n \u001b[90m    | \u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 | \u001b[39m            randomImage\u001b[33m:\u001b[39m url\n \u001b[90m 38 | \u001b[39m        }))\n \u001b[90m 39 | \u001b[39m        \u001b[0m\n");
 
 /***/ }),
 /* 8 */
