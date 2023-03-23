@@ -2,6 +2,7 @@ module.exports = {
   "output": {
     "filename": "[name].pack.js"
   },
+  
   "module": {
     "rules": [
       {
@@ -11,7 +12,8 @@ module.exports = {
             "presets": [
               "babel-preset-env",
               "babel-preset-react"
-            ]
+            ],
+            "plugins": ["babel-plugin-transform-object-rest-spread"]
           }
         },
         "exclude": /node_modules/,
