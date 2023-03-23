@@ -29,14 +29,18 @@ export default function Meme() {
     
     
     function getMemeImage() {
+        console.log(meme)
         const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
-        setMeme(prevMeme => {
+        setMeme(prevMeme => ({
            
-            return {...prevMeme, randomImage: url}
-    })
+            ...prevMeme, randomImage: url
+        }
+         
+    )
         
+        )
     }
     
     return (
