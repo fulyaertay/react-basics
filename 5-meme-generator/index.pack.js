@@ -409,13 +409,6 @@ var _Meme2 = _interopRequireDefault(_Meme);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Challenge: 
- * - Create a Meme component.
- * - Inside the Meme component, render a styled form
- *   with our 2 inputs and the button.
- * - Don't worry about adding any functionality yet
- */
 function App() {
     return _react2.default.createElement(
         "div",
@@ -518,7 +511,7 @@ function Header() {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -527,10 +520,6 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 exports.default = Meme;
 
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
 var _memesData = __webpack_require__(9);
 
 var _memesData2 = _interopRequireDefault(_memesData);
@@ -538,75 +527,63 @@ var _memesData2 = _interopRequireDefault(_memesData);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Meme() {
-    /**
-     * Challenge: Update our state to save the meme-related
-     * data as an object called `meme`. It should have the
-     * following 3 properties:
-     * topText, bottomText, randomImage.
-     * 
-     * The 2 text states can default to empty strings for now,
-     * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
-     * 
-     * Next, create a new state variable called `allMemeImages`
-     * which will default to `memesData`, which we imported above
-     * 
-     * Lastly, update the `getMemeImage` function and the markup 
-     * to reflect our newly reformed state object and array in the
-     * correct way.
-     */
+  /**
+   * Challenge: Update our state to save the meme-related
+   * data as an object called `meme`. It should have the
+   * following 3 properties:
+   * topText, bottomText, randomImage.
+   *
+   * The 2 text states can default to empty strings for now,
+   * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
+   *
+   * Next, create a new state variable called `allMemeImages`
+   * which will default to `memesData`, which we imported above
+   *
+   * Lastly, update the `getMemeImage` function and the markup
+   * to reflect our newly reformed state object and array in the
+   * correct way.
+   */
 
-    var _React$useState = _react2.default.useState({
-        topText: "",
-        bottomText: "",
-        randomImage: "http://i.imgflip.com/1bij.jpg"
-    }),
-        _React$useState2 = _slicedToArray(_React$useState, 2),
-        meme = _React$useState2[0],
-        setMeme = _React$useState2[1];
+  var _React$useState = React.useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg"
+  }),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      meme = _React$useState2[0],
+      setMeme = _React$useState2[1];
 
-    var _React$useState3 = _react2.default.useState(_memesData2.default),
-        _React$useState4 = _slicedToArray(_React$useState3, 2),
-        allMemeImages = _React$useState4[0],
-        setAllMemeImages = _React$useState4[1];
+  var _React$useState3 = React.useState(_memesData2.default),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      allMemeImages = _React$useState4[0],
+      setAllMemeImages = _React$useState4[1];
 
-    function getMemeImage() {
-        console.log(meme);
-        var memesArray = allMemeImages.data.memes;
-        var randomNumber = Math.floor(Math.random() * memesArray.length);
-        var url = memesArray[randomNumber].url;
-        setMeme(function (prevMeme) {
+  function getMemeImage() {
+    console.log(meme);
+    var memesArray = allMemeImages.data.memes;
+    var randomNumber = Math.floor(Math.random() * memesArray.length);
+    var url = memesArray[randomNumber].url;
+    setMeme(function (prevMeme) {
+      return _extends({}, prevMeme, { randomImage: url });
+    });
+  }
 
-            return _extends({}, prevMeme, { randomImage: url });
-        });
-    }
-
-    return _react2.default.createElement(
-        "main",
-        null,
-        _react2.default.createElement(
-            "div",
-            { className: "form" },
-            _react2.default.createElement("input", {
-                type: "text",
-                placeholder: "Top text",
-                className: "form--input"
-            }),
-            _react2.default.createElement("input", {
-                type: "text",
-                placeholder: "Bottom text",
-                className: "form--input"
-            }),
-            _react2.default.createElement(
-                "button",
-                {
-                    className: "form--button",
-                    onClick: getMemeImage
-                },
-                "Get a new meme image \uD83D\uDDBC"
-            )
-        ),
-        _react2.default.createElement("img", { src: meme.randomImage, className: "meme--image" })
-    );
+  return React.createElement(
+    "main",
+    null,
+    React.createElement(
+      "div",
+      { className: "form" },
+      React.createElement("input", { type: "text", placeholder: "Top text", className: "form--input" }),
+      React.createElement("input", { type: "text", placeholder: "Bottom text", className: "form--input" }),
+      React.createElement(
+        "button",
+        { className: "form--button", onClick: getMemeImage },
+        "Get a new meme image \uD83D\uDDBC"
+      )
+    ),
+    React.createElement("img", { src: meme.randomImage, className: "meme--image" })
+  );
 }
 
 /***/ }),
