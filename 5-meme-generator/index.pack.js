@@ -511,7 +511,7 @@ function Header() {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -520,70 +520,109 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 exports.default = Meme;
 
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _memesData = __webpack_require__(9);
 
 var _memesData2 = _interopRequireDefault(_memesData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function Meme() {
-  /**
-   * Challenge: Update our state to save the meme-related
-   * data as an object called `meme`. It should have the
-   * following 3 properties:
-   * topText, bottomText, randomImage.
-   *
-   * The 2 text states can default to empty strings for now,
-   * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
-   *
-   * Next, create a new state variable called `allMemeImages`
-   * which will default to `memesData`, which we imported above
-   *
-   * Lastly, update the `getMemeImage` function and the markup
-   * to reflect our newly reformed state object and array in the
-   * correct way.
-   */
+    /**
+     * Challenge: 
+     * 1. Set up the text inputs to save to
+     *    the `topText` and `bottomText` state variables.
+     * 2. Replace the hard-coded text on the image with
+     *    the text being saved to state.
+     */
 
-  var _React$useState = React.useState({
-    topText: "",
-    bottomText: "",
-    randomImage: "http://i.imgflip.com/1bij.jpg"
-  }),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      meme = _React$useState2[0],
-      setMeme = _React$useState2[1];
+    var _React$useState = _react2.default.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg"
+    }),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        meme = _React$useState2[0],
+        setMeme = _React$useState2[1];
 
-  var _React$useState3 = React.useState(_memesData2.default),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      allMemeImages = _React$useState4[0],
-      setAllMemeImages = _React$useState4[1];
+    var _React$useState3 = _react2.default.useState(_memesData2.default),
+        _React$useState4 = _slicedToArray(_React$useState3, 2),
+        allMemeImages = _React$useState4[0],
+        setAllMemeImages = _React$useState4[1];
 
-  function getMemeImage() {
-    console.log(meme);
-    var memesArray = allMemeImages.data.memes;
-    var randomNumber = Math.floor(Math.random() * memesArray.length);
-    var url = memesArray[randomNumber].url;
-    setMeme(function (prevMeme) {
-      return _extends({}, prevMeme, { randomImage: url });
-    });
-  }
+    function getMemeImage() {
+        var memesArray = allMemeImages.data.memes;
+        var randomNumber = Math.floor(Math.random() * memesArray.length);
+        var url = memesArray[randomNumber].url;
+        setMeme(function (prevMeme) {
+            return _extends({}, prevMeme, {
+                randomImage: url
+            });
+        });
+    }
 
-  return React.createElement(
-    "main",
-    null,
-    React.createElement(
-      "div",
-      { className: "form" },
-      React.createElement("input", { type: "text", placeholder: "Top text", className: "form--input" }),
-      React.createElement("input", { type: "text", placeholder: "Bottom text", className: "form--input" }),
-      React.createElement(
-        "button",
-        { className: "form--button", onClick: getMemeImage },
-        "Get a new meme image \uD83D\uDDBC"
-      )
-    ),
-    React.createElement("img", { src: meme.randomImage, className: "meme--image" })
-  );
+    function handleChange(event) {
+        var _event$target = event.target,
+            name = _event$target.name,
+            value = _event$target.value;
+
+        setMeme(function (prevMeme) {
+            return _extends({}, prevMeme, _defineProperty({}, name, value));
+        });
+    }
+
+    return _react2.default.createElement(
+        "main",
+        null,
+        _react2.default.createElement(
+            "div",
+            { className: "form" },
+            _react2.default.createElement("input", {
+                type: "text",
+                placeholder: "Top text",
+                className: "form--input",
+                name: "topText",
+                value: meme.topText,
+                onChange: handleChange
+            }),
+            _react2.default.createElement("input", {
+                type: "text",
+                placeholder: "Bottom text",
+                className: "form--input",
+                name: "bottomText",
+                value: meme.bottomText,
+                onChange: handleChange
+            }),
+            _react2.default.createElement(
+                "button",
+                {
+                    className: "form--button",
+                    onClick: getMemeImage
+                },
+                "Get a new meme image \uD83D\uDDBC"
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "meme" },
+            _react2.default.createElement("img", { src: meme.randomImage, className: "meme--image" }),
+            _react2.default.createElement(
+                "h2",
+                { className: "meme--text top" },
+                meme.topText
+            ),
+            _react2.default.createElement(
+                "h2",
+                { className: "meme--text bottom" },
+                meme.bottomText
+            )
+        )
+    );
 }
 
 /***/ }),
