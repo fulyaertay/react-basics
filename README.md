@@ -103,7 +103,7 @@
   
   ### Description
   
-  I created first interactive React project called as Meme Generator. The app features inluces;
+  I created first interactive React project called as Meme Generator. The app features include;
   - User can get random image by clicking button
   - User can adjust top/bottom texts on the image when typing
   - The app uses an Image API on https://api.imgflip.com/get_memes
