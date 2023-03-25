@@ -528,6 +528,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 function Meme() {
     var _React$useState = _react2.default.useState({
         topText: "",
@@ -543,12 +545,51 @@ function Meme() {
         allMemes = _React$useState4[0],
         setAllMemes = _React$useState4[1];
 
+    /**
+    useEffect takes a function as its parameter. If that function
+    returns something, it needs to be a cleanup function. Otherwise,
+    it should return nothing. If we make it an async function, it
+    automatically retuns a promise instead of a function or nothing.
+    Therefore, if you want to use async operations inside of useEffect,
+    you need to define the function separately inside of the callback
+    function, as seen below:
+    */
+
     _react2.default.useEffect(function () {
-        fetch("https://api.imgflip.com/get_memes").then(function (res) {
-            return res.json();
-        }).then(function (data) {
-            return setAllMemes(data.data.memes);
-        });
+        var getMemes = function () {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var res, data;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.next = 2;
+                                return fetch("https://api.imgflip.com/get_memes");
+
+                            case 2:
+                                res = _context.sent;
+                                _context.next = 5;
+                                return res.json();
+
+                            case 5:
+                                data = _context.sent;
+
+                                setAllMemes(data.data.memes);
+
+                            case 7:
+                            case "end":
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+
+            return function getMemes() {
+                return _ref.apply(this, arguments);
+            };
+        }();
+
+        getMemes();
     }, []);
 
     function getMemeImage() {
