@@ -412,7 +412,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function App() {
     return _react2.default.createElement(
         "div",
-        null,
+        { className: "container" },
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(_Meme2.default, null)
     );
