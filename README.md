@@ -8,6 +8,7 @@
   - [2-Digital Business Card](#2-digital-business-card)
   - [3-AirBnb Clone App](#3-airbnb-clone-app)
   - [4-Travel Journal App](#4-travel-journal-app)
+  - [5-Meme Generator App](#5-meme-generator)
 
     
   ## Overview
@@ -92,3 +93,24 @@
   - Props in React
   - Mapping data
   - && operator as short way of if statement
+
+
+  ### 5-Meme Generator App : [Live Link](https://react-site-meme-generator.netlify.app/)
+
+  ### Visualization on the App;
+  ![image](./5-meme-generator/meme-app.png)
+ 
+  
+  ### Description
+  
+  I created first interactive React project called as Meme Generator. The app features inluces;
+  - User can get random image by clicking button
+  - User can adjust top/bottom texts on the image when typing
+  - The app uses an Image API on https://api.imgflip.com/get_memes
+    
+  ### What I Learned?
+  - Event listeners
+  - States
+  - Conditional rendering
+  - React forms
+  - Side effects and useEffect() hook also cleanup function
