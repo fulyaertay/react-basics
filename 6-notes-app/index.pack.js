@@ -1237,16 +1237,10 @@ function Sidebar(props) {
                     { className: "text-snippet" },
                     note.body.split("\n")[0]
                 ),
-                _react2.default.createElement(
-                    "button",
-                    {
-                        className: "delete-btn",
-                        onClick: function onClick(event) {
-                            return props.deleteNote(event, note.id);
-                        }
-                    },
-                    _react2.default.createElement("i", { className: "gg-trash trash-icon" })
-                )
+                _react2.default.createElement("i", { className: "delete-btn fa fa-trash-o",
+                    onClick: function onClick(event) {
+                        return props.deleteNote(event, note.id);
+                    } })
             )
         );
     });
