@@ -981,7 +981,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function App() {
-    var _React$useState = _react2.default.useState(JSON.parse(localStorage.getItem("notes")) || []),
+    /**
+     * Challenge:
+     * Lazily initialize our `notes` state so it doesn't
+     * reach into localStorage on every single re-render
+     * of the App component
+     */
+    var _React$useState = _react2.default.useState(function () {
+        return JSON.parse(localStorage.getItem("notes")) || [];
+    }),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         notes = _React$useState2[0],
         setNotes = _React$useState2[1];
@@ -994,6 +1002,7 @@ function App() {
     _react2.default.useEffect(function () {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
+
     function createNewNote() {
         var newNote = {
             id: (0, _nanoid.nanoid)(),

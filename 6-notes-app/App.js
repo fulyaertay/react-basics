@@ -6,12 +6,6 @@ import Split from "react-split"
 import {nanoid} from "nanoid"
 
 export default function App() {
-    /**
-     * Challenge:
-     * Lazily initialize our `notes` state so it doesn't
-     * reach into localStorage on every single re-render
-     * of the App component
-     */
     const [notes, setNotes] = React.useState(
         () => JSON.parse(localStorage.getItem("notes")) || []
     )
