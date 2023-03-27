@@ -994,7 +994,6 @@ function App() {
     _react2.default.useEffect(function () {
         localStorage.setItem("notes", JSON.stringify(notes));
     }, [notes]);
-
     function createNewNote() {
         var newNote = {
             id: (0, _nanoid.nanoid)(),
