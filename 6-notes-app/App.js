@@ -6,9 +6,14 @@ import Split from "react-split"
 import {nanoid} from "nanoid"
 
 export default function App() {
-    
+    /**
+     * Challenge:
+     * Lazily initialize our `notes` state so it doesn't
+     * reach into localStorage on every single re-render
+     * of the App component
+     */
     const [notes, setNotes] = React.useState(
-        JSON.parse(localStorage.getItem("notes")) || []
+        () => JSON.parse(localStorage.getItem("notes")) || []
     )
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
@@ -17,6 +22,7 @@ export default function App() {
     React.useEffect(() => {
         localStorage.setItem("notes", JSON.stringify(notes))
     }, [notes])
+    
     function createNewNote() {
         const newNote = {
             id: nanoid(),
