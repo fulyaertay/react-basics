@@ -9,6 +9,7 @@
   - [3-AirBnb Clone App](#3-airbnb-clone-app)
   - [4-Travel Journal App](#4-travel-journal-app)
   - [5-Meme Generator App](#5-meme-generator)
+  - [6-Notes App](#6-notes-app)
 
     
   ## Overview
@@ -114,3 +115,20 @@
   - Conditional rendering
   - React forms
   - Side effects and useEffect() hook also cleanup function
+  
+  
+  ### 6-Notes App : [Live Link](https://scrimba-notes-app-react.netlify.app/)
+
+  ### Visualization on the App;
+  ![image](./6-notes-app/notes-app.gif)
+ 
+  
+  ### Description
+  
+  I created first second React project called as Note App. The app features include;
+  - User can create new note
+  - User can edit notes on mardown editor also see preview
+  - Delete notes on sidebar
+  - React libraries such as react-split, react-mde
+    
+
