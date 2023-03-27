@@ -125,7 +125,7 @@
   
   ### Description
   
-  I created first second React project called as Note App. The app features include;
+  I created second React project called as Note App. The app features include;
   - User can create new note
   - User can edit notes on mardown editor also see preview
   - Delete notes on sidebar
