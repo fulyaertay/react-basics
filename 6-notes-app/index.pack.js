@@ -981,12 +981,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function App() {
-    /**
-     * Challenge:
-     * Lazily initialize our `notes` state so it doesn't
-     * reach into localStorage on every single re-render
-     * of the App component
-     */
     var _React$useState = _react2.default.useState(function () {
         return JSON.parse(localStorage.getItem("notes")) || [];
     }),
@@ -1015,9 +1009,38 @@ function App() {
     }
 
     function updateNote(text) {
+        // Put the most recently-modified note at the top
         setNotes(function (oldNotes) {
-            return oldNotes.map(function (oldNote) {
-                return oldNote.id === currentNoteId ? _extends({}, oldNote, { body: text }) : oldNote;
+            var newArray = [];
+            for (var i = 0; i < oldNotes.length; i++) {
+                var oldNote = oldNotes[i];
+                if (oldNote.id === currentNoteId) {
+                    newArray.unshift(_extends({}, oldNote, { body: text }));
+                } else {
+                    newArray.push(oldNote);
+                }
+            }
+            return newArray;
+        });
+    }
+
+    /**
+     * Challenge: complete and implement the deleteNote function
+     * 
+     * Hints: 
+     * 1. What array method can be used to return a new
+     *    array that has filtered out an item based 
+     *    on a condition?
+     * 2. Notice the parameters being based to the function
+     *    and think about how both of those parameters
+     *    can be passed in during the onClick event handler
+     */
+
+    function deleteNote(event, noteId) {
+        event.stopPropagation();
+        setNotes(function (oldNotes) {
+            return oldNotes.filter(function (note) {
+                return note.id !== noteId;
             });
         });
     }
@@ -1042,7 +1065,8 @@ function App() {
                 notes: notes,
                 currentNote: findCurrentNote(),
                 setCurrentNoteId: setCurrentNoteId,
-                newNote: createNewNote
+                newNote: createNewNote,
+                deleteNote: deleteNote
             }),
             currentNoteId && notes.length > 0 && _react2.default.createElement(_Editor2.default, {
                 currentNote: findCurrentNote(),
@@ -1211,8 +1235,17 @@ function Sidebar(props) {
                 _react2.default.createElement(
                     "h4",
                     { className: "text-snippet" },
-                    "Note ",
-                    index + 1
+                    note.body.split("\n")[0]
+                ),
+                _react2.default.createElement(
+                    "button",
+                    {
+                        className: "delete-btn",
+                        onClick: function onClick(event) {
+                            return props.deleteNote(event, note.id);
+                        }
+                    },
+                    _react2.default.createElement("i", { className: "gg-trash trash-icon" })
                 )
             )
         );
