@@ -10,6 +10,7 @@
   - [4-Travel Journal App](#4-travel-journal-app)
   - [5-Meme Generator App](#5-meme-generator)
   - [6-Notes App](#6-notes-app)
+  - [5-Tenzies App](#7-tenzies-app)
 
     
   ## Overview
@@ -130,5 +131,23 @@
   - User can edit notes on mardown editor also see preview
   - Delete notes on sidebar
   - React libraries such as react-split, react-mde
+  
+  
+  ### 7-Tenzies App : [Live Link](https://fe-tenzies-app.netlify.app/)
+
+  ### Visualization on the App;
+  ![image](./7-tenzies-app/7-tenzies-app.gif)
+ 
+  
+  ### Description
+  
+  I created interactive game app called as Tenzies. The app features include;
+  - User can start new game
+  - User can roll dice until all other dices are same
+  - If all dices are same, user can win!
+  
+  ### What I Learned?
+  - .every() method
+  - react-confetti
     
 
