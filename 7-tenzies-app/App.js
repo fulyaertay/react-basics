@@ -4,33 +4,32 @@ import Die from "./Die"
 /**
  * Challenge:
  * 
- * - Create a Die component that takes a `value` prop
- * - Render 10 instances of the Die component (manually)
- *      - Provide a number between 1-6 for the value on each
- *        for now
- * - Style the <main> and <Die> components 
- *   to look like they do in the slide
- *      - Hints: Create a container to hold the 10 instances
- *        of the Die component, and use CSS Grid to lay them
- *        out evenly in 2 rows of 5 columns
- *      - Use flexbox on main to center the dice container
- *        in the center of the page
+ * Create state to hold our array of numbers. (Initialize
+ * the state by calling our `allNewDice` function so it 
+ * loads all new dice as soon as the app loads)
+ * 
+ * Map over the state numbers array to generate our array
+ * of Die elements and render those in place of our
+ * manually-written 10 Die elements.
  */
 
 export default function App() {
+    const [dice, setDice] = React.useState(allNewDice())
+    
+    function allNewDice() {
+        const newDice = []
+        for (let i = 0; i < 10; i++) {
+            newDice.push(Math.ceil(Math.random() * 6))
+        }
+        return newDice
+    }
+    
+    const diceElements = dice.map(die => <Die value={die} />)
+    
     return (
         <main>
             <div className="dice-container">
-                <Die value="1" />
-                <Die value="2" />
-                <Die value="3" />
-                <Die value="4" />
-                <Die value="5" />
-                <Die value="6" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
+                {diceElements}
             </div>
         </main>
     )
