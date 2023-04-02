@@ -700,11 +700,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Die(props) {
     var styles = {
-        backgroundColor: props.held ? "#59E391" : "white"
+        backgroundColor: props.isHeld ? "#59E391" : "white"
     };
     return _react2.default.createElement(
         "div",
-        { className: "die-face", onClick: props.hold, style: styles },
+        {
+            className: "die-face",
+            style: styles,
+            onClick: props.holdDice
+        },
         _react2.default.createElement(
             "h2",
             { className: "die-num" },
