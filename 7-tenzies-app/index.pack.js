@@ -528,6 +528,8 @@ var _reactConfetti2 = _interopRequireDefault(_reactConfetti);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
+    var rollCount = 0;
+
     var _React$useState = _react2.default.useState(allNewDice()),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         dice = _React$useState2[0],
@@ -574,9 +576,11 @@ function App() {
                     return die.isHeld ? die : generateNewDie();
                 });
             });
+            rollCount += 1;
         } else {
             setTenzies(false);
             setDice(allNewDice());
+            rollCount = 0;
         }
     }
 
