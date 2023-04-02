@@ -523,12 +523,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
     /**
-     * Challenge: Update the array of numbers in state to be
-     * an array of objects instead. Each object should look like:
-     * { value: <random number>, isHeld: false }
+     * Challenge: Add conditional styling to the Die component
+     * so that if it's held (isHeld === true), its background color
+     * changes to a light green (#59E391)
      * 
-     * Making this change will break parts of our code, so make
-     * sure to update things so we're back to a working state
+     * Remember: currently the Die component has no way of knowing
+     * if it's "held" or not.
      */
 
     var _React$useState = _react2.default.useState(allNewDice()),
@@ -553,7 +553,7 @@ function App() {
     }
 
     var diceElements = dice.map(function (die) {
-        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value });
+        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value, isHeld: die.isHeld });
     });
 
     return _react2.default.createElement(
