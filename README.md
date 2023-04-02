@@ -143,6 +143,7 @@
   
   I created interactive game app called as Tenzies. The app features include;
   - User can start new game
+  - User can see roll count
   - User can roll dice until all other dices are same
   - If all dices are same, user can win!
   
