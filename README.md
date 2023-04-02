@@ -148,6 +148,7 @@
   
   ### What I Learned?
   - .every() method
+  - nanoid()
   - react-confetti
     
 
