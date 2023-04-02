@@ -10,7 +10,7 @@
   - [4-Travel Journal App](#4-travel-journal-app)
   - [5-Meme Generator App](#5-meme-generator)
   - [6-Notes App](#6-notes-app)
-  - [5-Tenzies App](#7-tenzies-app)
+  - [7-Tenzies App](#7-tenzies-app)
 
     
   ## Overview
@@ -148,6 +148,7 @@
   
   ### What I Learned?
   - .every() method
+  - nanoid()
   - react-confetti
     
 
