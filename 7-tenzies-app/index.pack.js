@@ -619,6 +619,11 @@ function App() {
             diceElements
         ),
         _react2.default.createElement(
+            "h4",
+            null,
+            "Roll Count:"
+        ),
+        _react2.default.createElement(
             "button",
             {
                 className: "roll-dice",
