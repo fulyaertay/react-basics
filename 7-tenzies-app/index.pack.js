@@ -523,12 +523,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function App() {
     /**
-     * Challenge: Add conditional styling to the Die component
-     * so that if it's held (isHeld === true), its background color
-     * changes to a light green (#59E391)
+     * Challenge: Create a function `holdDice` that takes
+     * `id` as a parameter. For now, just have the function
+     * console.log(id).
      * 
-     * Remember: currently the Die component has no way of knowing
-     * if it's "held" or not.
+     * Then, figure out how to pass that function down to each
+     * instance of the Die component so when each one is clicked,
+     * it logs its own unique ID property. (Hint: there's more
+     * than one way to make that work, so just choose whichever
+     * you want)
+     * 
      */
 
     var _React$useState = _react2.default.useState(allNewDice()),
@@ -552,8 +556,14 @@ function App() {
         setDice(allNewDice());
     }
 
+    function _holdDice(id) {
+        console.log(id);
+    }
+
     var diceElements = dice.map(function (die) {
-        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value, isHeld: die.isHeld });
+        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value, isHeld: die.isHeld, holdDice: function holdDice() {
+                return _holdDice(die.id);
+            } });
     });
 
     return _react2.default.createElement(
