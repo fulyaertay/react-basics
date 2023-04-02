@@ -517,9 +517,20 @@ var _Die = __webpack_require__(7);
 
 var _Die2 = _interopRequireDefault(_Die);
 
+var _nanoid = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"nanoid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
+    /**
+     * Challenge: Update the array of numbers in state to be
+     * an array of objects instead. Each object should look like:
+     * { value: <random number>, isHeld: false }
+     * 
+     * Making this change will break parts of our code, so make
+     * sure to update things so we're back to a working state
+     */
+
     var _React$useState = _react2.default.useState(allNewDice()),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         dice = _React$useState2[0],
@@ -528,7 +539,11 @@ function App() {
     function allNewDice() {
         var newDice = [];
         for (var i = 0; i < 10; i++) {
-            newDice.push(Math.ceil(Math.random() * 6));
+            newDice.push({
+                value: Math.ceil(Math.random() * 6),
+                isHeld: false,
+                id: (0, _nanoid.nanoid)()
+            });
         }
         return newDice;
     }
@@ -538,7 +553,7 @@ function App() {
     }
 
     var diceElements = dice.map(function (die) {
-        return _react2.default.createElement(_Die2.default, { value: die });
+        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value });
     });
 
     return _react2.default.createElement(
