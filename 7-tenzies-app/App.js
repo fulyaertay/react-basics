@@ -4,7 +4,7 @@ import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 
 export default function App() {
-    let rollCount=0
+    const [rollCount, setRollCount]=React.useState(0)
 
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
@@ -42,11 +42,11 @@ export default function App() {
                     die :
                     generateNewDie()
             }))
-            rollCount+=1
+            setRollCount(oldCount=> oldCount+1)
         } else {
             setTenzies(false)
             setDice(allNewDice())
-            rollCount=0
+            setRollCount(0)
         }
     }
     
@@ -76,7 +76,7 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <h4 >Roll Count:</h4>
+            <h4 >Roll Count: {rollCount}</h4>
             <button 
                 className="roll-dice" 
                 onClick={rollDice}

@@ -528,17 +528,20 @@ var _reactConfetti2 = _interopRequireDefault(_reactConfetti);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-    var rollCount = 0;
-
-    var _React$useState = _react2.default.useState(allNewDice()),
+    var _React$useState = _react2.default.useState(0),
         _React$useState2 = _slicedToArray(_React$useState, 2),
-        dice = _React$useState2[0],
-        setDice = _React$useState2[1];
+        rollCount = _React$useState2[0],
+        setRollCount = _React$useState2[1];
 
-    var _React$useState3 = _react2.default.useState(false),
+    var _React$useState3 = _react2.default.useState(allNewDice()),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
-        tenzies = _React$useState4[0],
-        setTenzies = _React$useState4[1];
+        dice = _React$useState4[0],
+        setDice = _React$useState4[1];
+
+    var _React$useState5 = _react2.default.useState(false),
+        _React$useState6 = _slicedToArray(_React$useState5, 2),
+        tenzies = _React$useState6[0],
+        setTenzies = _React$useState6[1];
 
     _react2.default.useEffect(function () {
         var allHeld = dice.every(function (die) {
@@ -576,11 +579,13 @@ function App() {
                     return die.isHeld ? die : generateNewDie();
                 });
             });
-            rollCount += 1;
+            setRollCount(function (oldCount) {
+                return oldCount + 1;
+            });
         } else {
             setTenzies(false);
             setDice(allNewDice());
-            rollCount = 0;
+            setRollCount(0);
         }
     }
 
@@ -625,7 +630,8 @@ function App() {
         _react2.default.createElement(
             "h4",
             null,
-            "Roll Count:"
+            "Roll Count: ",
+            rollCount
         ),
         _react2.default.createElement(
             "button",
