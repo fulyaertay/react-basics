@@ -529,6 +529,33 @@ function App() {
         dice = _React$useState2[0],
         setDice = _React$useState2[1];
 
+    var _React$useState3 = _react2.default.useState(false),
+        _React$useState4 = _slicedToArray(_React$useState3, 2),
+        tenzies = _React$useState4[0],
+        setTenzies = _React$useState4[1];
+
+    _react2.default.useEffect(function () {
+        var allHeld = dice.every(function (die) {
+            return die.isHeld;
+        });
+        var firstValue = dice[0].value;
+        var allSameValue = dice.every(function (die) {
+            return die.value === firstValue;
+        });
+        if (allHeld && allSameValue) {
+            setTenzies(true);
+            console.log("You won!");
+        }
+    }, [dice]);
+    /**
+     * Challenge: Check the dice array for these winning conditions:
+     * 1. All dice are held, and
+     * 2. all dice have the same value
+     * 
+     * If both conditions are true, set `tenzies` to true and log
+     * "You won!" to the console
+     */
+
     function generateNewDie() {
         return {
             value: Math.ceil(Math.random() * 6),
@@ -545,15 +572,6 @@ function App() {
         return newDice;
     }
 
-    /**
-     * Challenge: Update the `rollDice` function to not just roll
-     * all new dice, but instead to look through the existing dice
-     * to NOT role any that are being `held`.
-     * 
-     * Hint: this will look relatively similiar to the `holdDice`
-     * function below. When creating new dice, remember to use
-     * `id: nanoid()` so any new dice have an `id` as well.
-     */
     function rollDice() {
         setDice(function (oldDice) {
             return oldDice.map(function (die) {
