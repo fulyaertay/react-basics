@@ -1,71 +1,37 @@
 import React from "react"
-import Confetti from "react-confetti"
 import Die from "./Die"
 
+/**
+ * Challenge:
+ * 
+ * - Create a Die component that takes a `value` prop
+ * - Render 10 instances of the Die component (manually)
+ *      - Provide a number between 1-6 for the value on each
+ *        for now
+ * - Style the <main> and <Die> components 
+ *   to look like they do in the slide
+ *      - Hints: Create a container to hold the 10 instances
+ *        of the Die component, and use CSS Grid to lay them
+ *        out evenly in 2 rows of 5 columns
+ *      - Use flexbox on main to center the dice container
+ *        in the center of the page
+ */
+
 export default function App() {
-    const [dice, setDice] = React.useState(allNewDice())
-    const [tenzies, setTenzies] = React.useState(false)
-    
-    React.useEffect(() => {
-        const firstValue = dice[0].value
-        const allHeld = dice.every(die => die.held)
-        const allSameNumber = dice.every(die => die.value === firstValue)
-        if(allHeld && allSameNumber) {
-            setTenzies(true)
-        }
-    }, [dice])
-    
-    function randomDieValue() {
-        return Math.ceil(Math.random() * 6)
-    }
-
-    function allNewDice() {
-        const newArray = []
-        for(let i = 0; i < 10; i++) {
-            const newDie = {
-                value: randomDieValue(),
-                held: false,
-                id: i + 1
-            }
-            newArray.push(newDie)
-        }
-        return newArray
-    }
-
-    function rollUnheldDice() {
-        if (!tenzies) {
-            setDice((oldDice) => oldDice.map((die, i) =>
-                die.held ? 
-                    die : 
-                    { value: randomDieValue(), held: false, id: i + 1 }
-            ))
-        } else {
-            setDice(allNewDice())
-            setTenzies(false)
-        }
-    }
-
-    function holdDice(id) {
-        setDice(prevDice => prevDice.map(die => {
-            return die.id === id ? 
-                {...die, held: !die.held} : 
-                die
-        }))
-    }
-
-    const diceElements = dice.map((die) => (
-        <Die key={die.id} {...die} hold={() => holdDice(die.id)} />
-    ))
-
     return (
         <main>
-            {tenzies && <Confetti />}
-            <h1>Tenzies</h1>
-            <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-            <div className="die-container">{diceElements}</div>
-            <button className="roll-dice" onClick={rollUnheldDice}>
-                {tenzies ? "Reset Game" : "Roll"}
-            </button>
+            <div className="dice-container">
+                <Die value="1" />
+                <Die value="2" />
+                <Die value="3" />
+                <Die value="4" />
+                <Die value="5" />
+                <Die value="6" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+            </div>
         </main>
     )
 }
