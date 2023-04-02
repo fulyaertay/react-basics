@@ -519,19 +519,16 @@ var _Die2 = _interopRequireDefault(_Die);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Challenge:
- * 
- * Create state to hold our array of numbers. (Initialize
- * the state by calling our `allNewDice` function so it 
- * loads all new dice as soon as the app loads)
- * 
- * Map over the state numbers array to generate our array
- * of Die elements and render those in place of our
- * manually-written 10 Die elements.
- */
-
 function App() {
+    /**
+     * Challenge: Create a `Roll Dice` button that will re-roll
+     * all 10 dice
+     * 
+     * Clicking the button should generate a new array of numbers
+     * and set the `dice` state to that new array (thus re-rendering
+     * the array to the page)
+     */
+
     var _React$useState = _react2.default.useState(allNewDice()),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         dice = _React$useState2[0],
@@ -545,6 +542,10 @@ function App() {
         return newDice;
     }
 
+    function rollDice() {
+        setDice(allNewDice());
+    }
+
     var diceElements = dice.map(function (die) {
         return _react2.default.createElement(_Die2.default, { value: die });
     });
@@ -556,6 +557,11 @@ function App() {
             "div",
             { className: "dice-container" },
             diceElements
+        ),
+        _react2.default.createElement(
+            "button",
+            { className: "roll-dice", onClick: rollDice },
+            "Roll"
         )
     );
 }
