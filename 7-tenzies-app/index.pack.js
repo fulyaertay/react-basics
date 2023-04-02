@@ -505,6 +505,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 exports.default = App;
@@ -522,19 +524,6 @@ var _nanoid = __webpack_require__(9);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-    /**
-     * Challenge: Create a function `holdDice` that takes
-     * `id` as a parameter. For now, just have the function
-     * console.log(id).
-     * 
-     * Then, figure out how to pass that function down to each
-     * instance of the Die component so when each one is clicked,
-     * it logs its own unique ID property. (Hint: there's more
-     * than one way to make that work, so just choose whichever
-     * you want)
-     * 
-     */
-
     var _React$useState = _react2.default.useState(allNewDice()),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         dice = _React$useState2[0],
@@ -556,14 +545,34 @@ function App() {
         setDice(allNewDice());
     }
 
+    /**
+     * Challenge: Update the `holdDice` function to flip
+     * the `isHeld` property on the object in the array
+     * that was clicked, based on the `id` prop passed
+     * into the function.
+     * 
+     * Hint: as usual, there's > 1 way to accomplish this.
+     * I'll be using `dice.map()` and checking for the `id`
+     * of the die to determine which one to flip `isHeld` on,
+     * but you can do whichever way makes the most sense to you.
+     */
     function _holdDice(id) {
-        console.log(id);
+        setDice(function (oldDice) {
+            return oldDice.map(function (die) {
+                return die.id === id ? _extends({}, die, { isHeld: !die.isHeld }) : die;
+            });
+        });
     }
 
     var diceElements = dice.map(function (die) {
-        return _react2.default.createElement(_Die2.default, { key: die.id, value: die.value, isHeld: die.isHeld, holdDice: function holdDice() {
+        return _react2.default.createElement(_Die2.default, {
+            key: die.id,
+            value: die.value,
+            isHeld: die.isHeld,
+            holdDice: function holdDice() {
                 return _holdDice(die.id);
-            } });
+            }
+        });
     });
 
     return _react2.default.createElement(
