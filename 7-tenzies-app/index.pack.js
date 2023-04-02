@@ -529,33 +529,39 @@ function App() {
         dice = _React$useState2[0],
         setDice = _React$useState2[1];
 
+    function generateNewDie() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: (0, _nanoid.nanoid)()
+        };
+    }
+
     function allNewDice() {
         var newDice = [];
         for (var i = 0; i < 10; i++) {
-            newDice.push({
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: (0, _nanoid.nanoid)()
-            });
+            newDice.push(generateNewDie());
         }
         return newDice;
     }
 
+    /**
+     * Challenge: Update the `rollDice` function to not just roll
+     * all new dice, but instead to look through the existing dice
+     * to NOT role any that are being `held`.
+     * 
+     * Hint: this will look relatively similiar to the `holdDice`
+     * function below. When creating new dice, remember to use
+     * `id: nanoid()` so any new dice have an `id` as well.
+     */
     function rollDice() {
-        setDice(allNewDice());
+        setDice(function (oldDice) {
+            return oldDice.map(function (die) {
+                return die.isHeld ? die : generateNewDie();
+            });
+        });
     }
 
-    /**
-     * Challenge: Update the `holdDice` function to flip
-     * the `isHeld` property on the object in the array
-     * that was clicked, based on the `id` prop passed
-     * into the function.
-     * 
-     * Hint: as usual, there's > 1 way to accomplish this.
-     * I'll be using `dice.map()` and checking for the `id`
-     * of the die to determine which one to flip `isHeld` on,
-     * but you can do whichever way makes the most sense to you.
-     */
     function _holdDice(id) {
         setDice(function (oldDice) {
             return oldDice.map(function (die) {
@@ -578,6 +584,16 @@ function App() {
     return _react2.default.createElement(
         "main",
         null,
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            "Tenzies"
+        ),
+        _react2.default.createElement(
+            "p",
+            { className: "instructions" },
+            "Roll until all dice are the same. Click each die to freeze it at its current value between rolls."
+        ),
         _react2.default.createElement(
             "div",
             { className: "dice-container" },
