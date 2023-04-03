@@ -75,9 +75,10 @@ main {
 .roll-dice:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
-h4{
-    display: inline-flex;
-    margin-bottom: 20px;
+h3{
+    display: inline-block;
+    margin:0;
+    padding: 0;
 }
 @media (max-width:768px){
     main{

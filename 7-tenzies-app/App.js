@@ -37,7 +37,6 @@ export default function App() {
             }
             localStorage.setItem("peviousScore", JSON.stringify(previousScore))
 
-
         }
        
        
@@ -104,8 +103,8 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <h4 >Roll Count: {rollCount}</h4>
-            <h4 >Previous Best Score: {previousScore}</h4>
+            <h3 >Roll Count: {rollCount}</h3>
+            <h3 >Previous Best Score: {previousScore}</h3>
             <button 
                 className="roll-dice" 
                 onClick={rollDice}

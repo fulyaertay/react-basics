@@ -655,13 +655,13 @@ function App() {
             diceElements
         ),
         _react2.default.createElement(
-            "h4",
+            "h3",
             null,
             "Roll Count: ",
             rollCount
         ),
         _react2.default.createElement(
-            "h4",
+            "h3",
             null,
             "Previous Best Score: ",
             previousScore
