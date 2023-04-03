@@ -5,7 +5,8 @@ import Confetti from "react-confetti"
 
 export default function App() {
     const [rollCount, setRollCount]=React.useState(0)
-
+    const [previousScore,setPreviousScore]=React.useState(0)
+    
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
     
@@ -77,6 +78,7 @@ export default function App() {
                 {diceElements}
             </div>
             <h4 >Roll Count: {rollCount}</h4>
+            <h4 >Previous Best Score: {previousScore}</h4>
             <button 
                 className="roll-dice" 
                 onClick={rollDice}
