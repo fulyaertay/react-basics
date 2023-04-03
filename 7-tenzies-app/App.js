@@ -42,7 +42,7 @@ export default function App() {
                     die :
                     generateNewDie()
             }))
-            setRollCount(oldCount=> oldCount+1)
+            setRollCount(oldRollCount=> oldRollCount+1)
         } else {
             setTenzies(false)
             setDice(allNewDice())

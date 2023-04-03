@@ -579,8 +579,8 @@ function App() {
                     return die.isHeld ? die : generateNewDie();
                 });
             });
-            setRollCount(function (oldCount) {
-                return oldCount + 1;
+            setRollCount(function (oldRollCount) {
+                return oldRollCount + 1;
             });
         } else {
             setTenzies(false);
