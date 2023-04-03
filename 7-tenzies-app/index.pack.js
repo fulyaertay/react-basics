@@ -637,6 +637,7 @@ function App() {
         "main",
         null,
         tenzies && _react2.default.createElement(_reactConfetti2.default, null),
+        tenzies && alert("Congrats! You earn " + previousScore + " points!"),
         _react2.default.createElement(
             "h1",
             { className: "title" },
