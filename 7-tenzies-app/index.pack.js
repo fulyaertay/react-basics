@@ -562,6 +562,24 @@ function App() {
 
             setTenzies(true);
         }
+        if (allSameValue) {
+            if (firstValue === 1) {
+                setPreviousScore(10);
+            } else if (firstValue === 2) {
+                setPreviousScore(20);
+            } else if (firstValue === 3) {
+                setPreviousScore(30);
+            } else if (firstValue === 4) {
+                setPreviousScore(40);
+            } else if (firstValue === 5) {
+                setPreviousScore(50);
+            } else if (firstValue === 6) {
+                setPreviousScore(60);
+            } else {
+                setPreviousScore(0);
+            }
+            localStorage.setItem("peviousScore", JSON.stringify(previousScore));
+        }
     }, [dice]);
 
     function generateNewDie() {
@@ -591,23 +609,7 @@ function App() {
                 return oldRollCount + 1;
             });
         } else {
-            var firstValue = dice[0].value;
-            if (firstValue === 1) {
-                setPreviousScore(10);
-            } else if (firstValue === 2) {
-                setPreviousScore(20);
-            } else if (firstValue === 3) {
-                setPreviousScore(30);
-            } else if (firstValue === 4) {
-                setPreviousScore(40);
-            } else if (firstValue === 5) {
-                setPreviousScore(50);
-            } else if (firstValue === 6) {
-                setPreviousScore(60);
-            } else {
-                setPreviousScore(0);
-            }
-            localStorage.setItem("peviousScore", JSON.stringify(previousScore));
+
             setTenzies(false);
             setDice(allNewDice());
             setRollCount(0);
@@ -637,7 +639,6 @@ function App() {
         "main",
         null,
         tenzies && _react2.default.createElement(_reactConfetti2.default, null),
-        tenzies && alert("Congrats! You earn " + previousScore + " points!"),
         _react2.default.createElement(
             "h1",
             { className: "title" },
@@ -663,7 +664,7 @@ function App() {
             "h4",
             null,
             "Previous Best Score: ",
-            previousScore != 0 ? previousScore : 0
+            previousScore
         ),
         _react2.default.createElement(
             "button",

@@ -18,10 +18,32 @@ export default function App() {
            
             setTenzies(true)
         }
-        
+        if (allSameValue){
+            if(firstValue===1){
+                setPreviousScore(10)
+            }
+            else if(firstValue===2){
+                setPreviousScore(20)
+            }else if(firstValue===3){
+                setPreviousScore(30)
+            }else if(firstValue===4){
+                setPreviousScore(40)
+            }else if(firstValue===5){
+                setPreviousScore(50)
+            }else if(firstValue===6){
+                setPreviousScore(60)
+            }else{
+                setPreviousScore(0)
+            }
+            localStorage.setItem("peviousScore", JSON.stringify(previousScore))
+
+
+        }
+       
        
 
     }, [dice])
+
 
     function generateNewDie() {
         return {
@@ -49,24 +71,7 @@ export default function App() {
             }))
             setRollCount(oldRollCount=> oldRollCount+1)
         } else {
-            const firstValue=dice[0].value
-            if(firstValue===1){
-                setPreviousScore(10)
-            }
-            else if(firstValue===2){
-                setPreviousScore(20)
-            }else if(firstValue===3){
-                setPreviousScore(30)
-            }else if(firstValue===4){
-                setPreviousScore(40)
-            }else if(firstValue===5){
-                setPreviousScore(50)
-            }else if(firstValue===6){
-                setPreviousScore(60)
-            }else{
-                setPreviousScore(0)
-            }
-            localStorage.setItem("peviousScore", JSON.stringify(previousScore))
+            
             setTenzies(false)
             setDice(allNewDice())
             setRollCount(0)
@@ -93,7 +98,6 @@ export default function App() {
     return (
         <main>
             {tenzies && <Confetti />}
-            {tenzies && alert(`Congrats! You earn ${previousScore} points!`)}
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.</p>
@@ -101,7 +105,7 @@ export default function App() {
                 {diceElements}
             </div>
             <h4 >Roll Count: {rollCount}</h4>
-            <h4 >Previous Best Score: {previousScore!=0 ? previousScore  :0}</h4>
+            <h4 >Previous Best Score: {previousScore}</h4>
             <button 
                 className="roll-dice" 
                 onClick={rollDice}
