@@ -557,7 +557,20 @@ function App() {
             return die.value === firstValue;
         });
         if (allHeld && allSameValue) {
+
             setTenzies(true);
+        } else if (allSameValue === 1) {
+            setPreviousScore(10);
+        } else if (allSameValue === 2) {
+            setPreviousScore(20);
+        } else if (allSameValue === 3) {
+            setPreviousScore(30);
+        } else if (allSameValue === 4) {
+            setPreviousScore(40);
+        } else if (allSameValue === 5) {
+            setPreviousScore(50);
+        } else if (allSameValue === 6) {
+            setPreviousScore(60);
         }
     }, [dice]);
 

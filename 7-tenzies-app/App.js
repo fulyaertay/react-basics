@@ -6,7 +6,7 @@ import Confetti from "react-confetti"
 export default function App() {
     const [rollCount, setRollCount]=React.useState(0)
     const [previousScore,setPreviousScore]=React.useState(0)
-    
+
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
     
@@ -15,8 +15,23 @@ export default function App() {
         const firstValue = dice[0].value
         const allSameValue = dice.every(die => die.value === firstValue)
         if (allHeld && allSameValue) {
+           
             setTenzies(true)
+        }else if(allSameValue===1){
+            setPreviousScore(10)
         }
+        else if(allSameValue===2){
+            setPreviousScore(20)
+        }else if(allSameValue===3){
+            setPreviousScore(30)
+        }else if(allSameValue===4){
+            setPreviousScore(40)
+        }else if(allSameValue===5){
+            setPreviousScore(50)
+        }else if(allSameValue===6){
+            setPreviousScore(60)
+        }
+
     }, [dice])
 
     function generateNewDie() {
