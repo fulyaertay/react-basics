@@ -143,9 +143,12 @@
   
   I created interactive game app called as Tenzies. The app features include;
   - User can start new game
-  - User can see roll count
+  - User can see total number of rolls 
   - User can roll dice until all other dices are same
   - If all dices are same, user can win!
+  - User can see the previous best score.
+  - Local storage to save the previous best score according to all dices are same for example;
+    - All dices are 6 then total previous score is 60 or dices are 1 then total previous score is 10 etc.
   
   ### What I Learned?
   - .every() method
