@@ -660,7 +660,7 @@ function App() {
             "h4",
             null,
             "Previous Best Score: ",
-            tenzies && previousScore
+            tenzies ? previousScore : 0
         ),
         _react2.default.createElement(
             "button",
