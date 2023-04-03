@@ -77,7 +77,7 @@ main {
 }
 h3{
     display: inline-block;
-    margin:0;
+    margin:12px;
     padding: 0;
 }
 @media (max-width:768px){
