@@ -533,7 +533,9 @@ function App() {
         rollCount = _React$useState2[0],
         setRollCount = _React$useState2[1];
 
-    var _React$useState3 = _react2.default.useState(0),
+    var _React$useState3 = _react2.default.useState(function () {
+        return JSON.parse(localStorage.getItem("previousScore")) || 0;
+    }),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
         previousScore = _React$useState4[0],
         setPreviousScore = _React$useState4[1];
@@ -660,7 +662,7 @@ function App() {
             "h4",
             null,
             "Previous Best Score: ",
-            tenzies ? previousScore : 0
+            previousScore != 0 ? previousScore : 0
         ),
         _react2.default.createElement(
             "button",
