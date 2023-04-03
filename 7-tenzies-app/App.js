@@ -19,20 +19,7 @@ export default function App() {
             setTenzies(true)
         }
         
-        else if(firstValue===1){
-            setPreviousScore(10)
-        }
-        else if(firstValue===2){
-            setPreviousScore(20)
-        }else if(firstValue===3){
-            setPreviousScore(30)
-        }else if(firstValue===4){
-            setPreviousScore(40)
-        }else if(firstValue===5){
-            setPreviousScore(50)
-        }else if(firstValue===6){
-            setPreviousScore(60)
-        }
+       
 
     }, [dice])
 
@@ -62,6 +49,24 @@ export default function App() {
             }))
             setRollCount(oldRollCount=> oldRollCount+1)
         } else {
+            const firstValue=dice[0].value
+            if(firstValue===1){
+                setPreviousScore(10)
+            }
+            else if(firstValue===2){
+                setPreviousScore(20)
+            }else if(firstValue===3){
+                setPreviousScore(30)
+            }else if(firstValue===4){
+                setPreviousScore(40)
+            }else if(firstValue===5){
+                setPreviousScore(50)
+            }else if(firstValue===6){
+                setPreviousScore(60)
+            }else{
+                setPreviousScore(0)
+            }
+            localStorage.setItem("peviousScore", JSON.stringify(previousScore))
             setTenzies(false)
             setDice(allNewDice())
             setRollCount(0)
