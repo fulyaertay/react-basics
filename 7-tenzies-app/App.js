@@ -17,8 +17,6 @@ export default function App() {
         if (allHeld && allSameValue) {
            
             setTenzies(true)
-        }
-        if (allSameValue){
             if(firstValue===1){
                 setPreviousScore(10)
             }
@@ -36,8 +34,8 @@ export default function App() {
                 setPreviousScore(0)
             }
             localStorage.setItem("peviousScore", JSON.stringify(previousScore))
-
         }
+  
        
        
 

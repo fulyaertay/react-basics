@@ -561,8 +561,6 @@ function App() {
         if (allHeld && allSameValue) {
 
             setTenzies(true);
-        }
-        if (allSameValue) {
             if (firstValue === 1) {
                 setPreviousScore(10);
             } else if (firstValue === 2) {
