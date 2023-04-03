@@ -559,17 +559,17 @@ function App() {
         if (allHeld && allSameValue) {
 
             setTenzies(true);
-        } else if (allSameValue === 1) {
+        } else if (firstValue === 1) {
             setPreviousScore(10);
-        } else if (allSameValue === 2) {
+        } else if (firstValue === 2) {
             setPreviousScore(20);
-        } else if (allSameValue === 3) {
+        } else if (firstValue === 3) {
             setPreviousScore(30);
-        } else if (allSameValue === 4) {
+        } else if (firstValue === 4) {
             setPreviousScore(40);
-        } else if (allSameValue === 5) {
+        } else if (firstValue === 5) {
             setPreviousScore(50);
-        } else if (allSameValue === 6) {
+        } else if (firstValue === 6) {
             setPreviousScore(60);
         }
     }, [dice]);
