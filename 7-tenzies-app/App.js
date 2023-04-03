@@ -100,7 +100,7 @@ export default function App() {
                 {diceElements}
             </div>
             <h4 >Roll Count: {rollCount}</h4>
-            <h4 >Previous Best Score: {previousScore}</h4>
+            <h4 >Previous Best Score: {tenzies && previousScore}</h4>
             <button 
                 className="roll-dice" 
                 onClick={rollDice}
