@@ -24,9 +24,9 @@ function App() {
     <QuizPage 
         key={nanoid()} 
         question={question.question} 
-        answers={[question.incorrect_answers[0] && question.incorrect_answers[0],
-          question.incorrect_answers[1] && question.incorrect_answers[1],
-          question.incorrect_answers[2] && question.incorrect_answers[2],
+        answers={[question.incorrect_answers[0] ? question.incorrect_answers[0]:undefined,
+          question.incorrect_answers[1] ? question.incorrect_answers[1]:undefined,
+          question.incorrect_answers[2] ? question.incorrect_answers[2]:undefined,
           question.correct_answer]}
     />
 ))

@@ -9,6 +9,7 @@ export default function QuizPage(props) {
         <h3 className='mainText'>{props.question}</h3>
         <div className='choices'>
           {props.answers.map(answer=>{
+            if (answer!=undefined)
             return <button className="choiceBtn">{answer}</button>
 
           })}
