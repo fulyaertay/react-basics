@@ -34,13 +34,20 @@ body{
 }
 
 .choices{
-  background-color: #293264;
-  color: aliceblue;
-  width: 100px;
+  display:flex;
+  justify-content: space-between;
+  gap:5px;
+}
+
+.choiceBtn{
+  border:1px solid #4D5B9E;
+  color: rgb(27, 27, 27);
+  width: 40px;
   height: 50px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 20px;
   outline: none;
   border: none;
+  background-color: aliceblue;
 }

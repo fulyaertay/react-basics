@@ -1,26 +1,18 @@
-import { useState,useEffect } from 'react'
+import React from "react"
 
-export default function MainPage() {
- const [questions, setQuestions]=useState([])
-  const [start,setStart]=useState(true)
- useEffect(()=>{
-  fetch("https://opentdb.com/api.php?amount=5")
-  .then(res=>res.json())
-  .then(data=>{
-    setQuestions(data.results)
-  })
-},[start])
+export default function QuizPage(props) {
 
   return (
     
-    <div className="container">
-      {questions.map((question)=>{
-        return <div className="questions">
-        <h3 className='mainText'>{question.question}</h3>
+
+      <div className="questions">
+        <h3 className='mainText'>{props.question}</h3>
+        <button className='choices'>{props.answers}</button>
       </div>
-      }
-      )}
       
-    </div>
+      
+
+      
+  
   )
 }
