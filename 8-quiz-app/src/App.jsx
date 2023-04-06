@@ -8,7 +8,7 @@ function App() {
   const [questions, setQuestions]=useState([])
 
   const [start,setStart]=useState(true)
-
+  let incorrectAnswers = []
   useEffect(()=>{
     fetch("https://opentdb.com/api.php?amount=5")
     .then(res=>res.json())
@@ -17,12 +17,17 @@ function App() {
     })
   },[start])
 
-  const getQuestions = questions.map(question => (
 
+
+  const getQuestions = questions.map(question => (
+  
     <QuizPage 
         key={nanoid()} 
         question={question.question} 
-        answers={[question.incorrect_answers,question.correct_answer]}
+        answers={[question.incorrect_answers[0] && question.incorrect_answers[0],
+          question.incorrect_answers[1] && question.incorrect_answers[1],
+          question.incorrect_answers[2] && question.incorrect_answers[2],
+          question.correct_answer]}
     />
 ))
   return (
