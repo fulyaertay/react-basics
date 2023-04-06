@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import MainPage from './components/main'
+import QuizPage from "./components/QuizPage"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <MainPage></MainPage>
+      <QuizPage ></QuizPage>
     </>
   )
 }

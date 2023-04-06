@@ -9,8 +9,8 @@ body{
   background-color: #EEF6F0;
 }
 .container{
-  margin: 300px auto;
-  width: 400px;
+  margin: 40px auto;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
