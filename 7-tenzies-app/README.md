@@ -1,4 +1,4 @@
-# cof0d44bfad1fb88293fdc9d1
+# Tenzies App
 
 Quick start:
 
