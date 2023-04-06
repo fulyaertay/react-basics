@@ -2,6 +2,9 @@ import React from "react"
 
 export default function QuizPage(props) {
   console.log(props.answers)
+  const styles={
+    backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
+  }
   return (
     
 
@@ -10,7 +13,7 @@ export default function QuizPage(props) {
         <div className='choices'>
           {props.answers.map(answer=>{
             if (answer!=undefined)
-            return <button className="choiceBtn">{answer}</button>
+            return <button className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 
           })}
          

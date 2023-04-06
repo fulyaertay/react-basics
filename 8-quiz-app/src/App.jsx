@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   const [questions, setQuestions]=useState([])
-
+  const [clickedAnswer,setClickedAnswer]=useState(false)
   const [start,setStart]=useState(true)
   let incorrectAnswers = []
   useEffect(()=>{
@@ -17,7 +17,10 @@ function App() {
     })
   },[start])
 
+  const toggleClick=()=>{
+    setClickedAnswer(clickedAnswer=> !clickedAnswer)
 
+  }
 
   const getQuestions = questions.map(question => (
   
@@ -28,6 +31,9 @@ function App() {
           question.incorrect_answers[1] ? question.incorrect_answers[1]:undefined,
           question.incorrect_answers[2] ? question.incorrect_answers[2]:undefined,
           question.correct_answer]}
+          toggleClick={toggleClick}
+          isClicked={clickedAnswer}
+          
     />
 ))
   return (
