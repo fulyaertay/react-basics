@@ -18,6 +18,7 @@ function App() {
   },[start])
 
   const getQuestions = questions.map(question => (
+
     <QuizPage 
         key={nanoid()} 
         question={question.question} 
