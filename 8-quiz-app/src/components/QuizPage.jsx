@@ -7,7 +7,9 @@ export default function QuizPage(props) {
 
       <div className="questions">
         <h3 className='mainText'>{props.question}</h3>
-        <button className='choices'>{props.answers}</button>
+        <div className='choices'>
+          <button className="choiceBtn">{props.answers}</button>
+        </div>
       </div>
       
       
