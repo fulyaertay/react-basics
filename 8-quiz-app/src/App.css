@@ -41,6 +41,7 @@ body{
 .choiceBtn{
   border:1px solid #4D5B9E;
   color: rgb(27, 27, 27);
+  width:200px;
   height: 50px;
   font-size: 16px;
   cursor: pointer;
