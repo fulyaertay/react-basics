@@ -11,11 +11,6 @@ export default function MainPage() {
   })
 },[start])
 
-
-
-  
-
-
   return (
     
     <div className="container">
