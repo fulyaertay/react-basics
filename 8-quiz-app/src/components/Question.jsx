@@ -18,10 +18,6 @@ export default function QuizPage(props) {
          
         </div>
       </div>
-      
-      
-
-      
   
   )
 }
