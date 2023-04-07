@@ -1,7 +1,7 @@
 
 import { useState,useEffect } from 'react'
 import {nanoid} from "nanoid"
-import QuizPage from "./components/QuizPage"
+import Questions from "./components/Question"
 import './App.css'
 
 function App() {
@@ -24,12 +24,10 @@ function App() {
 
   const getQuestions = questions.map(question => (
   
-    <QuizPage 
+    <Questions 
         key={nanoid()} 
         question={question.question} 
-        answers={[question.incorrect_answers[0] ? question.incorrect_answers[0]:undefined,
-          question.incorrect_answers[1] ? question.incorrect_answers[1]:undefined,
-          question.incorrect_answers[2] ? question.incorrect_answers[2]:undefined,
+        answers={ [question.incorrect_answers.map(incorrect_answer=>{return incorrect_answer}),
           question.correct_answer]}
           toggleClick={toggleClick}
           isClicked={clickedAnswer}
