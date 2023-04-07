@@ -8,7 +8,7 @@ function App() {
   const [questions, setQuestions]=useState([])
   const [clickedAnswer,setClickedAnswer]=useState(false)
   const [start,setStart]=useState(true)
-  let incorrectAnswers = []
+  
   useEffect(()=>{
     fetch("https://opentdb.com/api.php?amount=5")
     .then(res=>res.json())
