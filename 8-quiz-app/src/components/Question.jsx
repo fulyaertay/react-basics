@@ -1,6 +1,7 @@
 import React from "react"
 
-export default function QuizPage(props) {
+
+export default function Question(props) {
   console.log(props.key)
   const styles={
     backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
