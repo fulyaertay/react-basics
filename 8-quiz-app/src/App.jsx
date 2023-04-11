@@ -10,8 +10,6 @@ function App() {
   const [start,setStart]=useState(true)
   const [userAnswers, setUserAnswers] = useState({});
   const [score, setScore] = useState(0);
-
-  let incorrectAnswers = []
   useEffect(()=>{
     fetch("https://opentdb.com/api.php?amount=5")
     .then(res=>res.json())
