@@ -21,12 +21,6 @@ const correctAnswers= props.correctAnswer.map(answer=>
 //randomly get choices
 const shuffleChoices=[incorrectAnswers,correctAnswers]
 
-const shuffled = 
-  shuffleChoices
-  .map(value => ({ value, sort: Math.random() }))
-  .sort((a, b) => a.sort - b.sort)
-  .map(({ value }) => value)
-
 
   return (
     
@@ -34,7 +28,7 @@ const shuffled =
         <h3 className='mainText'>{props.question}</h3>
         <div className='choices'>
           {
-            shuffled
+             shuffleChoices.sort(() => Math.random() - 0.5)
           }
          
         </div>
