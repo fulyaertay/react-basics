@@ -1,13 +1,12 @@
 import React from "react"
 
-
 export default function Question(props) {
 
   const styles={
     backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
   }
   console.log(props.correctAnswer)
-  
+
   const incorrectAnswers =props.inCorrectAnswers[0].map(answer=>
        <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
   
