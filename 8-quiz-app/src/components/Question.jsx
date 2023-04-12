@@ -12,7 +12,6 @@ export default function Question(props) {
        <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
   
 )
-
 const correctAnswers= props.correctAnswer.map(answer=>
   <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 )
