@@ -7,12 +7,12 @@ export default function Question(props) {
   }
   console.log(props.correctAnswer)
 
-  const incorrectAnswers =props.inCorrectAnswers[0].map(answer=>
-       <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
+  const incorrectAnswers =props.inCorrectAnswers[0].map((answer,index)=>
+       <button key={index} className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
   
 )
-const correctAnswers= props.correctAnswer.map(answer=>
-  <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
+const correctAnswers= props.correctAnswer.map((answer,index)=>
+  <button key={index*4}  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 )
     
 //randomly get choices
