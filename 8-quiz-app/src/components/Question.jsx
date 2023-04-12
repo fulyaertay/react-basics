@@ -20,8 +20,9 @@ const correctAnswers= props.correctAnswer.map(answer=>
 )
     
    
-
+//randomly get choices
 const shuffleChoices=[incorrectAnswers,correctAnswers]
+
 let shuffled = shuffleChoices
 .map(value => ({ value, sort: Math.random() }))
 .sort((a, b) => a.sort - b.sort)
