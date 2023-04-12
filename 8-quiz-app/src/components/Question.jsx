@@ -7,12 +7,10 @@ export default function Question(props) {
     backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
   }
   console.log(props.correctAnswer)
+  
   const incorrectAnswers =props.inCorrectAnswers[0].map(answer=>
-    
-   
        <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
   
-
 )
 
 const correctAnswers= props.correctAnswer.map(answer=>
@@ -23,10 +21,12 @@ const correctAnswers= props.correctAnswer.map(answer=>
 //randomly get choices
 const shuffleChoices=[incorrectAnswers,correctAnswers]
 
-let shuffled = shuffleChoices
-.map(value => ({ value, sort: Math.random() }))
-.sort((a, b) => a.sort - b.sort)
-.map(({ value }) => value)
+const shuffled = 
+  shuffleChoices
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+
 
   return (
     
