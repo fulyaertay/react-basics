@@ -17,10 +17,8 @@ const correctAnswers= props.correctAnswer.map(answer=>
   <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 )
     
-   
 //randomly get choices
 const shuffleChoices=[incorrectAnswers,correctAnswers]
-
 
   return (
     
