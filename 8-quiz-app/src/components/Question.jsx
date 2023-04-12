@@ -2,7 +2,7 @@ import React from "react"
 
 
 export default function Question(props) {
-  console.log(props.key)
+
   const styles={
     backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
   }
@@ -12,6 +12,7 @@ export default function Question(props) {
         <h3 className='mainText'>{props.question}</h3>
         <div className='choices'>
           {props.answers.map((answer,key)=>{
+ 
             return <button id={key} className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 
           })}
