@@ -12,7 +12,7 @@ export default function Question(props) {
   
 )
 const correctAnswers= props.correctAnswer.map((answer,index)=>
-  <button id={index*4}  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
+  <button id={index+10}  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 )
     
 //randomly get choices
