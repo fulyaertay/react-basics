@@ -30,8 +30,8 @@ function App() {
         key={nanoid()} 
         question={question.question} 
         answers={ [question.incorrect_answers.map(incorrectAnswer=> {return incorrectAnswer}),question.correct_answer]}
-          toggleClick={toggleClick}
-          isClicked={clickedAnswer}
+        toggleClick={toggleClick}
+        isClicked={clickedAnswer}
           
     />
 ))

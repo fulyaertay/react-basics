@@ -11,10 +11,8 @@ export default function Question(props) {
       <div className="questions">
         <h3 className='mainText'>{props.question}</h3>
         <div className='choices'>
-          {props.answers.map(answer=>{
-            
-            if (answer!=undefined)
-            return <button id={props.key} className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
+          {props.answers.map((answer,key)=>{
+            return <button id={key} className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
 
           })}
          
