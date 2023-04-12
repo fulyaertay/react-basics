@@ -6,10 +6,10 @@ export default function Question(props) {
   const styles={
     backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
   }
-  const choices =props.answers.map((answer=>
+  const choices =props.answers.map(answer=>
    
        <button  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
-  )
+  
 
 )
   return (
