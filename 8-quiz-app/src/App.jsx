@@ -1,50 +1,13 @@
+import React from 'react';
+import Quiz from './components/Quiz';
 
-import { useState,useEffect } from 'react'
-import {nanoid} from "nanoid"
-import Questions from "./components/Question"
-import './App.css'
-
-function App() {
-  const [questions, setQuestions]=useState([])
-  const [clickedAnswer,setClickedAnswer]=useState(false)
-  const [start,setStart]=useState(true)
-  const [userAnswers, setUserAnswers] = useState({});
-  const [score, setScore] = useState(0);
-  
-  useEffect(()=>{
-    fetch("https://opentdb.com/api.php?amount=5")
-    .then(res=>res.json())
-    .then(data=>{
-      setQuestions(data.results)
-    })
-  },[start])
-
-  const toggleClick=(event)=>{
-    setUserAnswers(event.target.value)
-    setClickedAnswer(clickedAnswer=> !clickedAnswer)
-    console.log(userAnswers)
-
-  }
-
-  const getQuestions = questions.map(question => (
-  
-    <Questions 
-        key={nanoid()} 
-        question={question.question} 
-        inCorrectAnswers={ [question.incorrect_answers.map(incorrectAnswers=>{return incorrectAnswers})]}
-        correctAnswer={[question.correct_answer]}
-        toggleClick={toggleClick}
-        isClicked={clickedAnswer}
-          
-    />
-))
+const App = () => {
   return (
-    <>
-        <div className="container">
-         {getQuestions}
-        </div>
-    </>
-  )
-}
+    <div>
+      <h1>Quiz Uygulaması</h1>
+      <Quiz />
+    </div>
+  );
+};
 
-export default App
+export default App;

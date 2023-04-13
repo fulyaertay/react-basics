@@ -1,34 +1,27 @@
-import React from "react"
+import React, { useState } from 'react';
 
-export default function Question(props) {
+const Question = ({ question, options, handleAnswer }) => {
+  const [selectedAnswer, setSelectedAnswer] = useState('');
 
-  const styles={
-    backgroundColor:props.isClicked ? "#D6DBF5" : "aliceblue"
-  }
-  console.log(props.correctAnswer)
-
-  const incorrectAnswers =props.inCorrectAnswers[0].map((answer,index)=>
-       <button id={index} className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
-  
-)
-const correctAnswers= props.correctAnswer.map((answer,index)=>
-  <button id={index+10}  className="choiceBtn" style={styles} onClick={props.toggleClick}>{answer}</button>
-)
-    
-//randomly get choices
-const shuffleChoices=[incorrectAnswers,correctAnswers]
+  const handleClick = (answer) => {
+    setSelectedAnswer(answer);
+    handleAnswer(answer);
+  };
 
   return (
-    
-      <div className="questions">
-        <h3 className='mainText'>{props.question}</h3>
-        <div className='choices'>
-          {
-             shuffleChoices.sort(() => Math.random() - 0.5)
-          }
-         
-        </div>
-      </div>
-  
-  )
-}
+    <div>
+      <h2>{question}</h2>
+      {options.map((option) => (
+        <button
+          key={option}
+          onClick={() => handleClick(option)}
+          style={{ backgroundColor: selectedAnswer === option ? 'green' : '' }}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default Question;
