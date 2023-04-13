@@ -19,8 +19,10 @@ function App() {
     })
   },[start])
 
-  const toggleClick=()=>{
+  const toggleClick=(event)=>{
+    setUserAnswers(event.target.value)
     setClickedAnswer(clickedAnswer=> !clickedAnswer)
+    console.log(userAnswers)
 
   }
 
