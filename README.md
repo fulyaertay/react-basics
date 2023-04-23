@@ -11,6 +11,7 @@
   - [5-Meme Generator App](#5-meme-generator)
   - [6-Notes App](#6-notes-app)
   - [7-Tenzies App](#7-tenzies-app)
+  - [8-Quiz App](#8-quiz-app)
 
     
   ## Overview
@@ -155,4 +156,17 @@
   - nanoid()
   - react-confetti
     
+  ### 8-Quiz App : [Live Link](https://scrimba-quiz-app.netlify.app/)
+
+  ### Visualization on the App;
+  ![image](./8-quiz-app/quiz-app.gif)
+ 
+  
+  ### Description
+  
+  I created interactive quiz app. The app features include;
+  - User can start quiz
+  - The five questions are listed using [The Trivia API](https://the-trivia-api.com/api/questions?limit=5&region=TR&difficulty=easy&type=multiple)
+  - Tally correct answers and total score after User clicks "Check answers" button
+
 
