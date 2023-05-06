@@ -10,7 +10,7 @@ export default function Question({q, a, handleAnswer}){
                 {answer.a}
                 </p>
     })
-
+    
     return (
         <div className="question">
             <h2>{q}</h2>
