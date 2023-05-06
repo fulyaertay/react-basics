@@ -116,3 +116,9 @@ button.check {
 }
 
 
+
+.answers > p.blank {
+  border:1px solid #908e8e;
+  color:#908e8e;
+  background-color:transparent;
+}
